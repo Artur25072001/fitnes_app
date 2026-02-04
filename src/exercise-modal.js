@@ -1,43 +1,64 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const exerciseModal = document.querySelector('.exercise-modal');
-  const openBtn = document.querySelector('.start-link');
-  const closeExerciseBtn = document.querySelector('.exercise-modal_close');
-  const giveRatingBtn = document.querySelector('.modal-rating_btn');
-  const ratingModal = document.querySelector('.rating-modal');
-  const closeRatingBtn = document.querySelector('.rating-modal_close');
-  if (openBtn && exerciseModal && closeExerciseBtn) {
-    openBtn.addEventListener('click', e => {
-      e.preventDefault();
-      exerciseModal.classList.add('is-active');
-    });
+const exerciseModal = document.querySelector('.exercise-modal');
+const ratingModal = document.querySelector('.rating-modal');
+const listContainer = document.querySelector('.exercise-parts_list');
+const form = document.querySelector('.form-rating');
 
-    closeExerciseBtn.addEventListener('click', () => {
-      exerciseModal.classList.remove('is-active');
-    });
-  }
-  if (giveRatingBtn && ratingModal) {
-    giveRatingBtn.addEventListener('click', () => {
-      exerciseModal.classList.remove('is-active');
+import { fetchModal } from './main.js';
+import { addToFavorites } from './storage.js';
 
-      setTimeout(() => {
-        ratingModal.classList.add('is-active');
-      }, 250);
-    });
-  }
+form?.addEventListener('submit', event => {
+  event.preventDefault();
+  const emailInput = document.querySelector('.form-input');
+  const commentInput = document.querySelector('.form-textarea');
+  const email = emailInput.value.trim();
+  const comment = commentInput.value.trim();
 
-  if (closeRatingBtn) {
-    closeRatingBtn.addEventListener('click', () => {
-      ratingModal.classList.remove('is-active');
-    });
+  ratingForm.reset();
+});
+
+listContainer?.addEventListener('click', event => {
+  const target = event.target.closest('.start-link');
+  if (target) {
+    event.preventDefault();
+    const startId = target.id;
+    exerciseModal.classList.add('is-active');
+    fetchModal(startId);
   }
-  window.addEventListener('click', e => {
-    if (e.target === exerciseModal) exerciseModal.classList.remove('is-active');
-    if (e.target === ratingModal) ratingModal.classList.remove('is-active');
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      exerciseModal?.classList.remove('is-active');
-      ratingModal?.classList.remove('is-active');
-    }
-  });
+});
+
+exerciseModal?.addEventListener('click', event => {
+  if (event.target.closest('.exercise-modal_close')) {
+    exerciseModal.classList.remove('is-active');
+  }
+  if (event.target.closest('.modal-rating_btn')) {
+    exerciseModal.classList.remove('is-active');
+    setTimeout(() => {
+      ratingModal.classList.add('is-active');
+    }, 250);
+  }
+  if (event.target === exerciseModal) {
+    exerciseModal.classList.remove('is-active');
+  }
+  const favBtn = event.target.closest('.modal-favorites_btn');
+  console.log('Favorite button clicked:', favBtn);
+  if (favBtn) {
+    addToFavorites(currentOpenedExercise);
+    console.log('Success adding!');
+  }
+});
+
+ratingModal?.addEventListener('click', event => {
+  if (
+    event.target.closest('.rating-modal_close') ||
+    event.target === ratingModal
+  ) {
+    ratingModal.classList.remove('is-active');
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    exerciseModal?.classList.remove('is-active');
+    ratingModal?.classList.remove('is-active');
+  }
 });
