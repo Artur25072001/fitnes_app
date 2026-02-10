@@ -1,8 +1,16 @@
-const muscles_list = document.querySelector('.exercise-muscles_list');
-const parts_list = document.querySelector('.exercise-parts_list');
-const equipment_list = document.querySelector('.exercise-equipment_list');
-
 export function renderEquipment(equipment) {
+  // Query DOM elements each time to ensure we get the current elements
+  const muscles_list = document.querySelector('.exercise-muscles_list');
+  const parts_list = document.querySelector('.exercise-parts_list');
+  const equipment_list = document.querySelector('.exercise-equipment_list');
+
+  if (!muscles_list || !parts_list || !equipment_list) {
+    console.warn(
+      '[renders-index.js] Equipment render elements not found in DOM'
+    );
+    return;
+  }
+
   muscles_list.innerHTML = '';
   equipment_list.innerHTML = '';
   parts_list.innerHTML = '';
@@ -14,7 +22,7 @@ export function renderEquipment(equipment) {
             <div class="exercise-equipment_overlay">
             <h3 class="exercise-equipment_header">${equipment.name}</h3>
             <p class="exercise-equipment_text">${equipment.filter}</p></div>
-          
+
         </li>
       `;
     })
@@ -23,6 +31,16 @@ export function renderEquipment(equipment) {
 }
 
 export function renderParts(parts) {
+  // Query DOM elements each time to ensure we get the current elements
+  const muscles_list = document.querySelector('.exercise-muscles_list');
+  const parts_list = document.querySelector('.exercise-parts_list');
+  const equipment_list = document.querySelector('.exercise-equipment_list');
+
+  if (!muscles_list || !parts_list || !equipment_list) {
+    console.warn('[renders-index.js] Parts render elements not found in DOM');
+    return;
+  }
+
   muscles_list.innerHTML = '';
   equipment_list.innerHTML = '';
   parts_list.innerHTML = '';
@@ -80,6 +98,16 @@ export function renderParts(parts) {
 }
 
 export function renderMuscles(muscles) {
+  // Query DOM elements each time to ensure we get the current elements
+  const muscles_list = document.querySelector('.exercise-muscles_list');
+  const parts_list = document.querySelector('.exercise-parts_list');
+  const equipment_list = document.querySelector('.exercise-equipment_list');
+
+  if (!muscles_list || !parts_list || !equipment_list) {
+    console.warn('[renders-index.js] Muscles render elements not found in DOM');
+    return;
+  }
+
   muscles_list.innerHTML = '';
   equipment_list.innerHTML = '';
   parts_list.innerHTML = '';
@@ -91,7 +119,7 @@ export function renderMuscles(muscles) {
             <div class="exercise-muscles_overlay">
             <h3 class="exericise-muscles_header">${muscle.name}</h3>
             <p class="exercise-muscles_text">${muscle.filter}</p></div>
-            
+
         </li>
       `;
     })

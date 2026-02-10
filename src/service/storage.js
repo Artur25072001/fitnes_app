@@ -5,9 +5,9 @@ export function getFavorites() {
   return data;
 }
 
-export function isFavorite(id) {
+export function isFavorite(exercise) {
   const favorites = getFavorites();
-  const isFav = favorites.some(ex => ex.id === id.id);
+  const isFav = favorites.some(ex => ex.id === exercise.id);
   return isFav;
 }
 
@@ -17,10 +17,10 @@ export function addFavorite(exercise) {
   localStorage.setItem(STORAGE_KEY, updatedFavorites);
 }
 
-export function removeFavorite(id) {
+export function removeFavorite(exercise) {
   const favorites = getFavorites();
   const updatedFavorites = JSON.stringify(
-    favorites.filter(ex => ex.id !== id.id)
+    favorites.filter(ex => ex.id !== exercise.id)
   );
   localStorage.setItem(STORAGE_KEY, updatedFavorites);
 }

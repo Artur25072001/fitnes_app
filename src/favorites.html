@@ -22,13 +22,74 @@
           <div class="exercise-parts_container">
             <ul class="exercise-parts_list favorites-wrapper"></ul>
           </div>
-          <div class="exercise-btn-container favorites-btn-container">
-            <!-- <button class="exercise-button">1</button>
-            <button class="exercise-button">2</button>
-            <button class="exercise-button">3</button> -->
-          </div>
+          <div class="exercise-btn-container favorites-btn-container"></div>
         </div>
       </section>
+
+      <!-- Modal elements -->
+      <div class="exercise-modal">
+        <div class="exercise-modal_content"></div>
+      </div>
+      <div class="rating-modal">
+        <div class="rating-modal_content">
+          <span class="rating-modal_close">&times;</span>
+          <h2 class="form-rating_text">Rating</h2>
+          <div class="form-rating_container">
+            <p class="form-rating_count" id="rating-count">0.0</p>
+            <div class="star-rating">
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label for="star5" class="star-label" title="5 stars">
+                <svg class="form-rating_svg">
+                  <use href="./img/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4" class="star-label" title="4 stars">
+                <svg class="form-rating_svg">
+                  <use href="./img/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3" class="star-label" title="3 stars">
+                <svg class="form-rating_svg">
+                  <use href="./img/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2" class="star-label" title="2 stars">
+                <svg class="form-rating_svg">
+                  <use href="./img/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1" class="star-label" title="1 star">
+                <svg class="form-rating_svg">
+                  <use href="./img/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+            </div>
+          </div>
+
+          <form action="" class="form-rating">
+            <input
+              type="email"
+              class="form-input"
+              placeholder="Email"
+              required
+              name="Email"
+              id="email"
+            />
+            <textarea
+              name="Comment"
+              id="comment"
+              class="form-textarea"
+              placeholder="Your comment"
+              required
+            ></textarea
+            ><button class="form-btn">Send</button>
+          </form>
+        </div>
+      </div>
     </main>
 
     <load src="./partials/footer.html" />

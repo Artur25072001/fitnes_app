@@ -1,7 +1,15 @@
 import { isFavorite } from '../service/storage.js';
-const modal_container = document.querySelector('.exercise-modal_content');
+import { initFavoriteButton } from '../service/favorite-btn.js';
 
 export function renderModal(modalData) {
+  // Query DOM element each time to ensure we get the current element
+  const modal_container = document.querySelector('.exercise-modal_content');
+
+  if (!modal_container) {
+    console.warn('[renders-modal.js] Modal container not found in DOM');
+    return;
+  }
+
   modal_container.innerHTML = '';
   const favorite = isFavorite({ id: modalData._id });
   const markup = `
@@ -67,4 +75,7 @@ export function renderModal(modalData) {
     `;
 
   modal_container.innerHTML = markup;
+
+  // Initialize the favorite button immediately after rendering
+  initFavoriteButton({ id: modalData._id });
 }

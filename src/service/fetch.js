@@ -7,9 +7,6 @@ import { renderFavoritesPage } from '../renders/renders-favorites.js';
 import { renderModal } from '../renders/renders-modal.js';
 import { renderBtn } from '../renders/renders-btn.js';
 
-const quote_text = document.querySelector('.article-quote_text');
-const quote_author = document.querySelector('.article-quote_author');
-
 const apiLink = 'https://your-energy.b.goit.study/api';
 
 let filter_parts = 'bodypart';
@@ -18,6 +15,15 @@ let totalPages = 1;
 
 export async function fetchQuote() {
   try {
+    // Query DOM elements each time to ensure we get the current elements
+    const quote_text = document.querySelector('.article-quote_text');
+    const quote_author = document.querySelector('.article-quote_author');
+
+    if (!quote_text || !quote_author) {
+      console.warn('[fetch.js] Quote elements not found in DOM');
+      return;
+    }
+
     const response = await fetch(`${apiLink}/quote`);
     const data = await response.json();
     quote_text.textContent = data.quote;
@@ -34,7 +40,7 @@ export async function fetchMuscles(page = CURRENT_page) {
     );
     const data = await response.json();
     totalPages = data.totalPages;
-    renderBtn(totalPages, CURRENT_page);
+    renderBtn(totalPages, page);
     renderMuscles(data.results);
   } catch (error) {
     console.error('Error fetching muscles:', error);
@@ -48,7 +54,7 @@ export async function fetchParts(page = CURRENT_page, filter = filter_parts) {
     );
     const data = await response.json();
     totalPages = Math.ceil(data.totalPages / 10);
-    renderBtn(totalPages, CURRENT_page);
+    renderBtn(totalPages, page);
     renderParts(data.results);
   } catch (error) {
     console.error('Error fetching parts:', error);
@@ -62,7 +68,7 @@ export async function fetchEquipment(page = CURRENT_page) {
     );
     const data = await response.json();
     totalPages = data.totalPages;
-    renderBtn(totalPages, CURRENT_page);
+    renderBtn(totalPages, page);
     renderEquipment(data.results);
   } catch (error) {
     console.error('Error fetching equipment:', error);

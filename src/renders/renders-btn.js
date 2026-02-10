@@ -1,6 +1,11 @@
-const btn_container = document.querySelector('.exercise-btn-container');
 export function renderBtn(totalPages, currentPage) {
-  if (!btn_container) return;
+  // Query DOM element each time to ensure we get the current element
+  const btn_container = document.querySelector('.exercise-btn-container');
+
+  if (!btn_container) {
+    console.warn('[renders-btn.js] Button container not found in DOM');
+    return;
+  }
 
   const maxButtonsToShow = 3;
   let startPage, endPage;

@@ -1,3 +1,10 @@
+export function clearFavoritesContainer() {
+  const favoritesContainer = document.querySelector('.favorites-wrapper');
+  if (favoritesContainer) {
+    favoritesContainer.innerHTML = '';
+  }
+}
+
 export function renderFavoritesPage(fav) {
   const favoritesContainer = document.querySelector('.favorites-wrapper');
   if (!favoritesContainer) return;
@@ -9,11 +16,11 @@ export function renderFavoritesPage(fav) {
     return;
   }
 
-  const markup = `<li class="exercise-parts_item">
+  const markup = `<li class="exercise-parts_item" data-exercise-id="${fav._id}">
           <div class="parts-upper_container">
             <div class="parts-rating_container">
               <p class="parts-type">WORKOUT</p>
-              <svg class="parts-trash_svg">
+              <svg class="parts-trash_svg" data-trash-id="${fav._id}">
                 <use href="../img/sprite.svg#icon-trash"></use>
               </svg>
               <p class="parts-rating">${fav.rating}</p>
@@ -22,7 +29,7 @@ export function renderFavoritesPage(fav) {
               </svg>
             </div>
             <div class="parts-start_container">
-              <a href="" id="${fav._id}" class="start-link">Start</a>
+              <a href="#" id="${fav._id}" class="start-link">Start</a>
               <img
                 src="../img/arrow-right.png"
                 alt="arrow-right"

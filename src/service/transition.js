@@ -1,3 +1,5 @@
+import { initPage } from './page-init.js';
+
 export function updateActiveLink() {
   const navLinks = document.querySelectorAll('.nav-link');
   const currentPath = window.location.pathname;
@@ -33,6 +35,6 @@ export async function smoothNavigate(url) {
     document.title = newTitle;
     window.history.pushState({}, '', url);
     updateActiveLink();
-    window.dispatchEvent(new Event('DOMContentLoaded'));
+    initPage(url);
   });
 }

@@ -279,6 +279,18 @@
     justify-content: center;
     align-items: center;
     border: 1px solid rgba(36, 36, 36, 0.1);
+    box-sizing: border-box;
+  }
+
+  .social-link:hover {
+    background-color: rgba(36, 36, 36, 0.8);
+  }
+  .social-item:has(.social-link:hover) {
+    border: none;
+  }
+
+  .social-link:hover .link-svg {
+    fill: #f4f4f4;
   }
 
   .link-svg {

@@ -1,7 +1,6 @@
-import { fetchQuote, fetchMuscles } from './service/fetch.js';
-import { updateActiveLink } from './service/transition.js';
+import { initPage } from './service/page-init.js';
+
+// Initialize the index page on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
-  updateActiveLink();
+  initPage(window.location.href);
 });
-fetchQuote();
-fetchMuscles();

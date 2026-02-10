@@ -1,10 +1,6 @@
-import { fetchQuote } from './service/fetch.js';
-import { updateActiveLink } from './service/transition.js';
-import { initFavoritesHandler } from './handlers/handler-favorites.js';
+import { initPage } from './service/page-init.js';
 
-initFavoritesHandler();
-fetchQuote();
+// Initialize the favorites page on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
-  updateActiveLink();
-  console.log('DOM fully loaded and parsed');
+  initPage(window.location.href);
 });
