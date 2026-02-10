@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/fitnes_app/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla App Template</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/modern-normalize/modern-normalize.css"
+    />
+    <script type="module" crossorigin src="/fitnes_app/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/transition-H7k7xtWo.js">
+    <link rel="stylesheet" crossorigin href="/fitnes_app/assets/transition-D_nhefmT.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header-container">
+    <svg class="site-logo" aria-label="Site logo">
+      <use href="../img/sprite.svg#icon-site"></use>
+    </svg>
+    <nav class="header-nav">
+      <div
+        class="hamburger-container"
+        id="menuButton"
+        tabindex="0"
+        role="button"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="nav-content" id="menuContent">
+        <ul class="nav-list">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-favorites" href="./favorites.html"
+              >Favorites</a
+            >
+          </li>
+        </ul>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <svg class="link-svg">
+                <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <svg class="link-svg">
+                <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <svg class="link-svg" width="20" height="20">
+                <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <main>
+      <!-- Loads the specified .html file -->
+      <section class="hero container">
+  <div class="hero-container">
+    <div class="hero-container_content">
+      <svg class="hero-svg">
+        <use href="../img/sprite.svg#icon-sun"></use>
+      </svg>
+      <h1 class="hero-header">
+        Get <i style="font-family: DM Italic">Body</i> in shape, Stay healthy
+      </h1>
+      <p class="hero-text">
+        Transform your physique and embrace a healthier lifestyle with our
+        comprehensive fitness and nutrition support.
+      </p>
+    </div>
+    <div class="hero-image"></div>
+    <div class="tags-image"></div>
+    <ul class="tags-list">
+      <li class="tags-item"><a href="#" class="tags-link">#Sport</a></li>
+      <li class="tags-item"><a href="#" class="tags-link">#Healthy</a></li>
+      <li class="tags-item"><a href="#" class="tags-link">#Workout</a></li>
+      <li class="tags-item"><a href="#" class="tags-link">#Diet</a></li>
+    </ul>
+  </div>
+</section>
+
+
+      <section class="exercise container">
+  <div class="exercise-header_container">
+    <h2 class="exercise-header">Exercises</h2>
+  </div>
+  <div class="exercise-wrapper">
+    <div class="filter-container">
+      <form class="filter-search_wrapper">
+        <input
+          class="filter-search_input"
+          type="text"
+          placeholder="Search"
+          name="search"
+        />
+
+        <button type="submit" class="search-btn">
+          <svg class="exercise-search_svg">
+            <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+
+      <ul class="exercise-filter_list">
+        <li class="exercise-filter_item">
+          <a href="javascript:void(0)" class="exercise-link muscles active"
+            >Muscles</a
+          >
+        </li>
+        <li class="exercise-filter_item">
+          <a href="javascript:void(0)" class="exercise-link body_parts"
+            >Body parts</a
+          >
+        </li>
+        <li class="exercise-filter_item equipment">
+          <a href="javascript:void(0)" class="exercise-link equipment"
+            >Equipment</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="exercise-muscles_box">
+      <ul class="exercise-muscles_list"></ul>
+    </div>
+    <div class="exercise-parts_container">
+      <ul class="exercise-parts_list"></ul>
+    </div>
+    <div class="exercise-equipment_container">
+      <ul class="exercise-equipment_list"></ul>
+    </div>
+
+    <div class="exercise-btn-container"></div>
+    <div class="exercise-modal">
+      <div class="exercise-modal_content"></div>
+    </div>
+    <div class="rating-modal">
+      <div class="rating-modal_content">
+        <span class="rating-modal_close">&times;</span>
+        <h2 class="form-rating_text">Rating</h2>
+        <div class="form-rating_container">
+          <p class="form-rating_count">0.0</p>
+          <svg class="form-rating_svg">
+            <use href="../img/sprite.svg#icon-star"></use>
+          </svg>
+          <svg class="form-rating_svg">
+            <use href="../img/sprite.svg#icon-star"></use>
+          </svg>
+          <svg class="form-rating_svg">
+            <use href="../img/sprite.svg#icon-star"></use>
+          </svg>
+          <svg class="form-rating_svg">
+            <use href="../img/sprite.svg#icon-star"></use>
+          </svg>
+          <svg class="form-rating_svg">
+            <use href="../img/sprite.svg#icon-star"></use>
+          </svg>
+        </div>
+
+        <form action="" class="form-rating">
+          <input
+            type="email"
+            class="form-input"
+            placeholder="Email"
+            required
+            name="Email"
+            id="email"
+          />
+          <textarea
+            name="Comment"
+            id="comment"
+            class="form-textarea"
+            placeholder="Your comment"
+            required
+          ></textarea
+          ><button class="form-btn">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <article class="exercise-article">
+  <div class="exercise-article_quote">
+    <div class="svg-container_run">
+      <svg class="svg-article_run">
+        <use href="../img/sprite.svg#icon-run"></use>
+      </svg>
+    </div>
+
+    <h3 class="article-quote_header">Quote of the day</h3>
+    <div>
+      <svg class="svg-quote">
+        <use href="../img/sprite.svg#icon-commas"></use>
+      </svg>
+    </div>
+
+    <p class="article-quote_text"></p>
+    <p class="article-quote_author"></p>
+  </div>
+  <div class="exercise-article_image-container"><img src="" alt="" /></div>
+  <div class="exercise-article_text-container">
+    <div class="svg-container_training">
+      <svg class="svg-training">
+        <use href="../img/sprite.svg#icon-train"></use>
+      </svg>
+    </div>
+
+    <h2 class="article-text_header">110 min</h2>
+    <p class="article-text">Daily norm of sports</p>
+    <p class="article-description">
+      The World Health Organization recommends at least 150 minutes of
+      moderate-intensity aerobic physical activity throughout the week for
+      adults aged 18-64. However, what happens if we adjust that number to 110
+      minutes every day? While it might seem like a high number to hit,
+      dedicating 110 minutes daily to sporting activities may offer unparalleled
+      benefits to physical health, mental well-being, and overall quality of
+      life.
+    </p>
+  </div>
+</article>
+
+</section>
+
+    </main>
+
+    <footer class="footer">
+  <div class="footer-container container">
+    <div class="footer-link_container">
+      <div class="link-container">
+        <svg class="footer-logo">
+          <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-site"></use>
+        </svg>
+        <ul class="footer-link_list">
+          <li class="footer-link_item">
+            <a href="" class="footer-link">
+              <svg class="footer-link_img">
+                <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer-link_item">
+            <a href="" class="footer-link">
+              <svg class="footer-link_img">
+                <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer-link_item">
+            <a href="" class="footer-link">
+              <svg class="footer-link_img">
+                <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <h2 class="footer-header">
+        Transforming your <i style="font-family: DM Italic">body</i> shape with
+        us
+      </h2>
+      <form action="" class="footer-form">
+        <p class="footer-form_text">Subscribe and learn about new exercises!</p>
+        <input
+          type="email"
+          class="footer-form_input"
+          placeholder="Email"
+        /><button class="footer-form_button">Send</button>
+      </form>
+    </div>
+
+    <div class="privacy-container">
+      <p class="privacy-text">Your Energy. All rights reserved.</p>
+      <div class="privacy-wrapper">
+        <ul class="privacy-list">
+          <li class="privacy-item">
+            <a href="" class="privacy-link">Privacy Policy&nbsp;&nbsp;</a>
+          </li>
+          <span class="privacy-span"> / </span>
+          <li class="privacy-item">
+            <a href="" class="privacy-link">&nbsp;&nbsp;Terms of Service</a>
+          </li>
+        </ul>
+        <p class="privacy-copyright">©2023</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
