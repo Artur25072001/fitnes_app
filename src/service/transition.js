@@ -1,9 +1,6 @@
-const navitems = document.querySelectorAll('.nav-item');
-
-function updateActiveLink() {
+export function updateActiveLink() {
   const navLinks = document.querySelectorAll('.nav-link');
   const currentPath = window.location.pathname;
-
   navLinks.forEach(link => {
     const item = link.closest('.nav-item');
     const linkPath = link.getAttribute('href').replace('./', '');
@@ -20,11 +17,7 @@ function updateActiveLink() {
     }
   });
 }
-document.addEventListener('DOMContentLoaded', () => {
-  updateActiveLink();
-});
-
-async function smoothNavigate(url) {
+export async function smoothNavigate(url) {
   if (!document.startViewTransition) {
     window.location.href = url;
     return;
@@ -43,10 +36,3 @@ async function smoothNavigate(url) {
     window.dispatchEvent(new Event('DOMContentLoaded'));
   });
 }
-document.addEventListener('click', e => {
-  const link = e.target.closest('.nav-link');
-  if (link && !e.defaultPrevented) {
-    e.preventDefault();
-    smoothNavigate(link.getAttribute('href'));
-  }
-});
