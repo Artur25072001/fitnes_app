@@ -1,0 +1,2 @@
+let t=null;function s(){let i="https://your-energy.b.goit.study/api/subscription";const e=document.querySelector(".footer-form");t&&e&&e.removeEventListener("submit",t),t=()=>{const r=e.querySelector('input[type="email"]'),o=r.value.trim();if(o)try{fetch(i,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:o})}),r.value="",alert("Subscription successful!")}catch(n){console.error("Error during subscription:",n)}},e&&e.addEventListener("submit",t)}export{s as initFooterHandler};
+//# sourceMappingURL=handler-footer-gXCxc3Iz.js.map

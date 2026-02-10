@@ -10,15 +10,21 @@
       href="node_modules/modern-normalize/modern-normalize.css"
     />
     <script type="module" crossorigin src="/fitnes_app/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/transition-H7k7xtWo.js">
-    <link rel="stylesheet" crossorigin href="/fitnes_app/assets/transition-D_nhefmT.css">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/modal-utils-OXXmHF7Y.js">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handler-main-DfODBxO1.js">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handler-modal-Fp6B2RfH.js">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handlers-DNJEFVkh.js">
+    <link rel="stylesheet" crossorigin href="/fitnes_app/assets/modal-utils-Bw8RizXt.css">
   </head>
   <body>
     <header class="header">
   <div class="container header-container">
-    <svg class="site-logo" aria-label="Site logo">
-      <use href="../img/sprite.svg#icon-site"></use>
-    </svg>
+    <a href="./index.html" class="logo-link">
+      <svg class="site-logo" aria-label="Site logo">
+        <use href="../img/sprite.svg#icon-site"></use>
+      </svg>
+    </a>
+
     <nav class="header-nav">
       <div
         class="hamburger-container"
@@ -49,21 +55,36 @@
 
         <ul class="social-list">
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a
+              href="https://www.facebook.com/goITclub/"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg class="link-svg">
                 <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-facebook"></use>
               </svg>
             </a>
           </li>
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a
+              href="https://www.instagram.com/goitclub/"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg class="link-svg">
                 <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-instagram"></use>
               </svg>
             </a>
           </li>
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a
+              href="https://www.youtube.com/c/GoIT"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg class="link-svg" width="20" height="20">
                 <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-youtube"></use>
               </svg>
@@ -163,22 +184,39 @@
         <span class="rating-modal_close">&times;</span>
         <h2 class="form-rating_text">Rating</h2>
         <div class="form-rating_container">
-          <p class="form-rating_count">0.0</p>
-          <svg class="form-rating_svg">
-            <use href="../img/sprite.svg#icon-star"></use>
-          </svg>
-          <svg class="form-rating_svg">
-            <use href="../img/sprite.svg#icon-star"></use>
-          </svg>
-          <svg class="form-rating_svg">
-            <use href="../img/sprite.svg#icon-star"></use>
-          </svg>
-          <svg class="form-rating_svg">
-            <use href="../img/sprite.svg#icon-star"></use>
-          </svg>
-          <svg class="form-rating_svg">
-            <use href="../img/sprite.svg#icon-star"></use>
-          </svg>
+          <p class="form-rating_count" id="rating-count">0.0</p>
+          <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label for="star5" class="star-label" title="5 stars">
+              <svg class="form-rating_svg">
+                <use href="../img/sprite.svg#icon-star"></use>
+              </svg>
+            </label>
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label for="star4" class="star-label" title="4 stars">
+              <svg class="form-rating_svg">
+                <use href="../img/sprite.svg#icon-star"></use>
+              </svg>
+            </label>
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label for="star3" class="star-label" title="3 stars">
+              <svg class="form-rating_svg">
+                <use href="../img/sprite.svg#icon-star"></use>
+              </svg>
+            </label>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label for="star2" class="star-label" title="2 stars">
+              <svg class="form-rating_svg">
+                <use href="../img/sprite.svg#icon-star"></use>
+              </svg>
+            </label>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label for="star1" class="star-label" title="1 star">
+              <svg class="form-rating_svg">
+                <use href="../img/sprite.svg#icon-star"></use>
+              </svg>
+            </label>
+          </div>
         </div>
 
         <form action="" class="form-rating">
@@ -189,6 +227,7 @@
             required
             name="Email"
             id="email"
+            pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
           />
           <textarea
             name="Comment"
@@ -250,26 +289,46 @@
   <div class="footer-container container">
     <div class="footer-link_container">
       <div class="link-container">
-        <svg class="footer-logo">
-          <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-site"></use>
-        </svg>
+        <a href="./index.html" class="logo-link"
+          ><svg class="footer-logo">
+            <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-site"></use>
+          </svg>
+        </a>
         <ul class="footer-link_list">
           <li class="footer-link_item">
-            <a href="" class="footer-link">
+            <a
+              href="https://www.facebook.com/goITclub/"
+              class="footer-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="facebook"
+            >
               <svg class="footer-link_img">
                 <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-facebook"></use>
               </svg>
             </a>
           </li>
           <li class="footer-link_item">
-            <a href="" class="footer-link">
+            <a
+              href="https://www.instagram.com/goitclub/"
+              class="footer-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="instagram"
+            >
               <svg class="footer-link_img">
                 <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-instagram"></use>
               </svg>
             </a>
           </li>
           <li class="footer-link_item">
-            <a href="" class="footer-link">
+            <a
+              href="https://www.youtube.com/c/GoIT"
+              class="footer-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="youtube"
+            >
               <svg class="footer-link_img">
                 <use href="/fitnes_app/assets/sprite-BubUeIEA.svg#icon-youtube"></use>
               </svg>
@@ -287,6 +346,10 @@
           type="email"
           class="footer-form_input"
           placeholder="Email"
+          required
+          name="Email"
+          id="email"
+          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
         /><button class="footer-form_button">Send</button>
       </form>
     </div>

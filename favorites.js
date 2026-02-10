@@ -1,2 +1,2 @@
-import{g as o,h as n,j as a,f as i,u as r}from"./assets/transition-H7k7xtWo.js";const s=document.querySelector(".nav-link-favorites");function d(){console.log("Initializing favorites handler"),s.addEventListener("click",()=>{const e=o();setTimeout(()=>{if(e.length===0){n(0);return}},1e3);for(const t of e)a(t.id)})}d();i();document.addEventListener("DOMContentLoaded",()=>{r(),console.log("DOM fully loaded and parsed")});
+import{i as o}from"./assets/modal-utils-OXXmHF7Y.js";import"./assets/handler-favorites-ffLVFoVD.js";document.addEventListener("DOMContentLoaded",()=>{o(window.location.href)});
 //# sourceMappingURL=favorites.js.map
