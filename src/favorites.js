@@ -6,4 +6,5 @@ initFavoritesHandler();
 fetchQuote();
 document.addEventListener('DOMContentLoaded', () => {
   updateActiveLink();
+  console.log('DOM fully loaded and parsed');
 });
