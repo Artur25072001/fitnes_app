@@ -15,7 +15,7 @@ const apiLink = 'https://your-energy.b.goit.study/api';
  */
 function scrollToExercisesOnMobile() {
   // Only scroll on mobile (screen width < 768px)
-  if (window.innerWidth < 768) {
+  if (window.innerWidth < 1440) {
     const exerciseSection = document.querySelector('.exercise');
     if (exerciseSection) {
       exerciseSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -106,7 +106,6 @@ export async function fetchFavorites(id = 0) {
   try {
     const response = await fetch(`${apiLink}/exercises/${id}`);
     const data = await response.json();
-    console.log('Fetched favorite exercise:', data);
     renderFavoritesPage(data);
   } catch (error) {
     console.error('Error fetching modal:', error);

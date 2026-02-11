@@ -20,7 +20,6 @@ function handleTrashClick(event) {
   event.preventDefault();
 
   const exerciseId = trashIcon.dataset.trashId;
-  console.log('Trash icon clicked for exercise:', exerciseId);
 
   const favoritesContainer = document.querySelector('.favorites-wrapper');
   const exerciseItem = favoritesContainer.querySelector(

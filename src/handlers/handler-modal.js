@@ -47,14 +47,6 @@ export function initModalHandler() {
     const commentInput = document.querySelector('.form-textarea');
     const ratingInput = document.querySelector('input[name="rating"]:checked');
 
-    console.log('[DEBUG] Form submit - ratingCount:', ratingCount);
-    console.log('[DEBUG] Form submit - emailInput.value:', emailInput?.value);
-    console.log(
-      '[DEBUG] Form submit - commentInput.value:',
-      commentInput?.value
-    );
-    console.log('[DEBUG] Form submit - ratingInput.value:', ratingInput?.value);
-
     const email = emailInput.value.trim();
     const review = commentInput.value.trim();
     const rating = ratingInput ? ratingInput.value : null;
@@ -81,7 +73,6 @@ export function initModalHandler() {
       );
 
       if (response.ok) {
-        console.log('Rating submitted successfully');
         ratingForm.reset();
         alert('Rating submitted successfully');
         // Reset rating count display
@@ -126,44 +117,16 @@ export function initModalHandler() {
       const favoriteBtn = modalContent.querySelector('.modal-favorites_btn');
       currentExerciseId = favoriteBtn ? favoriteBtn.id : null;
 
-      console.log(
-        '[DEBUG] Opening rating modal - currentExerciseId:',
-        currentExerciseId
-      );
-
       // Reset form and rating count when modal opens
       ratingForm.reset();
       if (ratingCount) {
         ratingCount.textContent = '0.0';
       }
 
-      // Check form state before opening rating modal
-      const emailInput = document.querySelector('.form-input');
-      const commentInput = document.querySelector('.form-textarea');
-      const ratingInput = document.querySelector(
-        'input[name="rating"]:checked'
-      );
-      console.log(
-        '[DEBUG] Before opening rating modal - email:',
-        emailInput?.value,
-        'comment:',
-        commentInput?.value,
-        'rating:',
-        ratingInput?.value
-      );
-
       exerciseModal.classList.remove('is-active');
       setTimeout(() => {
         ratingModal.classList.add('is-active');
         // Check form state after opening rating modal
-        console.log(
-          '[DEBUG] After opening rating modal - email:',
-          emailInput?.value,
-          'comment:',
-          commentInput?.value,
-          'rating:',
-          ratingInput?.value
-        );
       }, 250);
     }
     if (event.target === exerciseModal) {
@@ -180,26 +143,6 @@ export function initModalHandler() {
       event.target.closest('.rating-modal_close') ||
       event.target === ratingModal
     ) {
-      console.log(
-        '[DEBUG] Closing rating modal - currentExerciseId:',
-        currentExerciseId
-      );
-
-      // Check form state before closing
-      const emailInput = document.querySelector('.form-input');
-      const commentInput = document.querySelector('.form-textarea');
-      const ratingInput = document.querySelector(
-        'input[name="rating"]:checked'
-      );
-      console.log(
-        '[DEBUG] Before closing rating modal - email:',
-        emailInput?.value,
-        'comment:',
-        commentInput?.value,
-        'rating:',
-        ratingInput?.value
-      );
-
       // Reset form and rating count when modal closes
       ratingForm.reset();
       ratingModal.classList.remove('is-active');
@@ -212,14 +155,6 @@ export function initModalHandler() {
       setTimeout(() => {
         openExerciseModal(modal_Id);
         // Check form state after closing
-        console.log(
-          '[DEBUG] After closing rating modal - email:',
-          emailInput?.value,
-          'comment:',
-          commentInput?.value,
-          'rating:',
-          ratingInput?.value
-        );
       }, 250);
     }
   };
@@ -232,21 +167,6 @@ export function initModalHandler() {
     if (e.key === 'Escape') {
       console.log('[DEBUG] Escape key pressed');
 
-      // Check form state before closing
-      const emailInput = document.querySelector('.form-input');
-      const commentInput = document.querySelector('.form-textarea');
-      const ratingInput = document.querySelector(
-        'input[name="rating"]:checked'
-      );
-      console.log(
-        '[DEBUG] Escape - email:',
-        emailInput?.value,
-        'comment:',
-        commentInput?.value,
-        'rating:',
-        ratingInput?.value
-      );
-
       // Reset form and rating count when Escape is pressed
       ratingForm.reset();
       exerciseModal?.classList.remove('is-active');
@@ -258,14 +178,6 @@ export function initModalHandler() {
       }
 
       // Check form state after closing
-      console.log(
-        '[DEBUG] Escape after - email:',
-        emailInput?.value,
-        'comment:',
-        commentInput?.value,
-        'rating:',
-        ratingInput?.value
-      );
     }
   };
   document.addEventListener('keydown', documentKeydownListener);
