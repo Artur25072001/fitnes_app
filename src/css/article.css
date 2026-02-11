@@ -115,7 +115,7 @@
   line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  max-height: calc(21px * 4);
+  max-height: calc(20px * 4);
 }
 /* TABLET */
 @media screen and (min-width: 768px) {
