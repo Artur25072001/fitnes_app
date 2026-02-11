@@ -6,6 +6,7 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
   return {
+    base: '/fitnes_app/',
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },

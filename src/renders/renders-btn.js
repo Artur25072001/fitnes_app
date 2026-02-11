@@ -34,7 +34,7 @@ export function renderBtn(totalPages, currentPage) {
   // First page button (<<)
   const firstPageDisabled = currentPage === 1 ? 'disabled' : '';
   markup += `
-    <button class="exercise-button nav-button" data-page="1" ${firstPageDisabled}>
+    <button class="exercise-button nav-button" data-page="1" aria-label="First page" ${firstPageDisabled}>
       <svg class="test-svg">
         <use href="${spriteUrl}#icon-two-arrow-left"></use>
       </svg>
@@ -45,7 +45,7 @@ export function renderBtn(totalPages, currentPage) {
   const prevPageDisabled = currentPage === 1 ? 'disabled' : '';
   const prevPage = Math.max(1, currentPage - 1);
   markup += `
-    <button class="exercise-button nav-button" data-page="${prevPage}" ${prevPageDisabled}>
+    <button class="exercise-button nav-button" aria-label="Previous page" data-page="${prevPage}" ${prevPageDisabled}>
       <svg class="test-svg">
         <use href="${spriteUrl}#icon-one-arrow-left"></use>
       </svg>
@@ -69,7 +69,7 @@ export function renderBtn(totalPages, currentPage) {
   const nextPageDisabled = currentPage === totalPages ? 'disabled' : '';
   const nextPage = Math.min(totalPages, currentPage + 1);
   markup += `
-    <button class="exercise-button nav-button" data-page="${nextPage}" ${nextPageDisabled}>
+    <button class="exercise-button nav-button" aria-label="Next page" data-page="${nextPage}" ${nextPageDisabled}>
       <svg class="test-svg">
         <use href="${spriteUrl}#icon-one-arrow-right"></use>
       </svg>
@@ -79,7 +79,7 @@ export function renderBtn(totalPages, currentPage) {
   // Last page button (>>)
   const lastPageDisabled = currentPage === totalPages ? 'disabled' : '';
   markup += `
-    <button class="exercise-button nav-button" data-page="${totalPages}" ${lastPageDisabled}>
+    <button class="exercise-button nav-button" aria-label="Last page" data-page="${totalPages}" ${lastPageDisabled}>
       <svg class="test-svg">
         <use href="${spriteUrl}#icon-two-arrow-right"></use>
       </svg>
