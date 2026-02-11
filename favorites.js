@@ -1,2 +1,2 @@
-import{i as o}from"./assets/modal-utils-ChZuL5-_.js";import"./assets/handler-favorites-c6iPj6Cg.js";document.addEventListener("DOMContentLoaded",()=>{o(window.location.href)});
+import{i as o}from"./assets/modal-utils-ClQl_S5T.js";import"./assets/handler-favorites-CQpSPsRF.js";document.addEventListener("DOMContentLoaded",()=>{o(window.location.href)});
 //# sourceMappingURL=favorites.js.map
