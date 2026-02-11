@@ -1,4 +1,12 @@
-/* MAUN  */
+/* MAIN  */
+
+.test-svg {
+  width: 20px;
+  height: 20px;
+  fill: #242424;
+  stroke: #242424;
+  pointer-events: none;
+}
 
 .exercise-header {
   font-size: 28px;

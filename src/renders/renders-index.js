@@ -61,11 +61,9 @@ export function renderParts(parts) {
             </div>
             <div class="parts-start_container">
               <a href="" id="${part._id}" class="start-link">Start</a>
-              <img
-                src="../img/arrow-right.png"
-                alt="arrow-right"
-                class="start-img"
-              />
+              <svg class="test-svg">
+                <use href="./img/sprite.svg#icon-arrow-right"></use>
+              </svg>
             </div>
           </div>
           <div class="parts-name_container">

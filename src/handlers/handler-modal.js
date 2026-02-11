@@ -46,8 +46,10 @@ export function initModalHandler() {
     const ratingInput = document.querySelector('input[name="rating"]:checked');
 
     const email = emailInput.value.trim();
-    const comment = commentInput.value.trim();
+    const review = commentInput.value.trim();
     const rating = ratingInput ? ratingInput.value : null;
+    const rate = Number(rating);
+    console.log(typeof rate);
 
     // Validate rating is selected
     if (!rating) {
@@ -60,21 +62,18 @@ export function initModalHandler() {
       const response = await fetch(
         `https://your-energy.b.goit.study/api/exercises/${currentExerciseId}/rating`,
         {
-          method: 'POST',
+          method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            rating: parseInt(rating),
-            email: email,
-            review: comment,
-          }),
+          body: JSON.stringify({ rate, email, review }),
         }
       );
 
       if (response.ok) {
         console.log('Rating submitted successfully');
         ratingForm.reset();
+        alert('Rating submitted successfully');
         // Reset rating count display
         if (ratingCount) {
           ratingCount.textContent = '0.0';
