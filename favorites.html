@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png  " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fitness app for healthy life." />
     <title>Fitness</title>
     <script type="module" crossorigin src="/fitnes_app/favorites.js"></script>
-    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/modal-utils-CBa532Ng.js">
-    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handler-favorites-C9-fVA8C.js">
-    <link rel="stylesheet" crossorigin href="/fitnes_app/assets/modal-utils-4fjENNym.css">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/modal-utils-BhCvlTdW.js">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handler-favorites-CUcmE7th.js">
+    <link rel="stylesheet" crossorigin href="/fitnes_app/assets/modal-utils-Crnoa6Sx.css">
   </head>
   <body>
     <header class="header">
@@ -55,6 +56,7 @@
               class="social-link"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="facebook"
             >
               <svg class="link-svg">
                 <use href="/fitnes_app/assets/sprite-mYoisd9W.svg#icon-facebook"></use>
@@ -67,6 +69,7 @@
               class="social-link"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="instagram"
             >
               <svg class="link-svg">
                 <use href="/fitnes_app/assets/sprite-mYoisd9W.svg#icon-instagram"></use>
@@ -79,6 +82,7 @@
               class="social-link"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="youtube"
             >
               <svg class="link-svg" width="20" height="20">
                 <use href="/fitnes_app/assets/sprite-mYoisd9W.svg#icon-youtube"></use>
@@ -89,7 +93,11 @@
       </div>
     </nav>
     <div class="nav-anchor_container">
-      <a href="#headerNav" class="nav-anchor_link">
+      <a
+        href="#headerNav"
+        class="nav-anchor_link"
+        aria-label="moving up to navigation"
+      >
         <svg class="nav-anchor_svg">
           <use href="/fitnes_app/assets/sprite-mYoisd9W.svg#icon-arrow-right"></use>
         </svg>
@@ -220,7 +228,7 @@
   <div class="footer-container container">
     <div class="footer-link_container">
       <div class="link-container">
-        <a href="./index.html" class="logo-link"
+        <a href="./index.html" class="logo-link" aria-label="Site logo"
           ><svg class="footer-logo">
             <use href="/fitnes_app/assets/sprite-mYoisd9W.svg#icon-site"></use>
           </svg>
@@ -291,8 +299,9 @@
         <ul class="privacy-list">
           <li class="privacy-item">
             <a href="" class="privacy-link">Privacy Policy&nbsp;&nbsp;</a>
+            <span class="privacy-span"> / </span>
           </li>
-          <span class="privacy-span"> / </span>
+
           <li class="privacy-item">
             <a href="" class="privacy-link">&nbsp;&nbsp;Terms of Service</a>
           </li>
