@@ -62,13 +62,17 @@
 .article-quote_header {
   font-size: 20px;
   color: rgb(244, 244, 244);
-  font-family: DM Medium, sans-serif;
+  font-family:
+    DM Medium,
+    sans-serif;
   font-weight: 500;
 }
 .article-text_header {
   font-size: 20px;
   color: #242424;
-  font-family: DM Medium, sans-serif;
+  font-family:
+    DM Medium,
+    sans-serif;
   font-weight: 500;
 }
 .article-quote_text {
@@ -104,7 +108,7 @@
 .article-description {
   grid-row: 3;
   grid-column: 2 / 3;
-  font-size: 14px;
+  font-size: 13px;
   color: #242424;
   display: -webkit-box;
   -webkit-line-clamp: 4;

@@ -9,6 +9,20 @@ import { renderBtn } from '../renders/renders-btn.js';
 
 const apiLink = 'https://your-energy.b.goit.study/api';
 
+/**
+ * Scroll to the exercises section on mobile devices only
+ * Used after pagination to bring user back to top of exercises
+ */
+function scrollToExercisesOnMobile() {
+  // Only scroll on mobile (screen width < 768px)
+  if (window.innerWidth < 768) {
+    const exerciseSection = document.querySelector('.exercise');
+    if (exerciseSection) {
+      exerciseSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+}
+
 let filter_parts = 'bodypart';
 let CURRENT_page = 1;
 let totalPages = 1;
@@ -42,6 +56,7 @@ export async function fetchMuscles(page = CURRENT_page) {
     totalPages = data.totalPages;
     renderBtn(totalPages, page);
     renderMuscles(data.results);
+    scrollToExercisesOnMobile();
   } catch (error) {
     console.error('Error fetching muscles:', error);
   }
@@ -56,6 +71,7 @@ export async function fetchParts(page = CURRENT_page, filter = filter_parts) {
     totalPages = Math.ceil(data.totalPages / 10);
     renderBtn(totalPages, page);
     renderParts(data.results);
+    scrollToExercisesOnMobile();
   } catch (error) {
     console.error('Error fetching parts:', error);
   }
@@ -70,6 +86,7 @@ export async function fetchEquipment(page = CURRENT_page) {
     totalPages = data.totalPages;
     renderBtn(totalPages, page);
     renderEquipment(data.results);
+    scrollToExercisesOnMobile();
   } catch (error) {
     console.error('Error fetching equipment:', error);
   }
