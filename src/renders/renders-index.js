@@ -1,3 +1,5 @@
+import spriteUrl from '../img/sprite.svg';
+
 export function renderEquipment(equipment) {
   // Query DOM elements each time to ensure we get the current elements
   const muscles_list = document.querySelector('.exercise-muscles_list');
@@ -52,24 +54,24 @@ export function renderParts(parts) {
             <div class="parts-rating_container">
               <p class="parts-type">WORKOUT</p>
               <svg class="parts-trash_svg">
-                <use href="../img/sprite.svg#icon-trash"></use>
+                <use href="${spriteUrl}#icon-trash"></use>
               </svg>
               <p class="parts-rating">${part.rating}</p>
               <svg class="parts-star_svg">
-                <use href="../img/sprite.svg#icon-star"></use>
+                <use href="${spriteUrl}#icon-star"></use>
               </svg>
             </div>
             <div class="parts-start_container">
               <a href="" id="${part._id}" class="start-link">Start</a>
               <svg class="parts-arrow-svg">
-                <use href="./img/sprite.svg#icon-arrow-right"></use>
+                <use href="${spriteUrl}#icon-arrow-right"></use>
               </svg>
             </div>
           </div>
           <div class="parts-name_container">
             <div class="parts-run_container">
               <svg class="parts-svg_run">
-                <use href="../img/sprite.svg#icon-run"></use>
+                <use href="${spriteUrl}#icon-run"></use>
               </svg>
             </div>
             <h3 class="parts-name">${part.name}</h3>

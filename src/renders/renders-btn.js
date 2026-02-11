@@ -1,3 +1,5 @@
+import spriteUrl from '../img/sprite.svg';
+
 export function renderBtn(totalPages, currentPage) {
   // Query DOM element each time to ensure we get the current element
   const btn_container = document.querySelector('.exercise-btn-container');
@@ -34,7 +36,7 @@ export function renderBtn(totalPages, currentPage) {
   markup += `
     <button class="exercise-button nav-button" data-page="1" ${firstPageDisabled}>
       <svg class="test-svg">
-        <use href="./img/sprite.svg#icon-two-arrow-left"></use>
+        <use href="${spriteUrl}#icon-two-arrow-left"></use>
       </svg>
     </button>
   `;
@@ -45,7 +47,7 @@ export function renderBtn(totalPages, currentPage) {
   markup += `
     <button class="exercise-button nav-button" data-page="${prevPage}" ${prevPageDisabled}>
       <svg class="test-svg">
-        <use href="./img/sprite.svg#icon-one-arrow-left"></use>
+        <use href="${spriteUrl}#icon-one-arrow-left"></use>
       </svg>
     </button>
   `;
@@ -69,7 +71,7 @@ export function renderBtn(totalPages, currentPage) {
   markup += `
     <button class="exercise-button nav-button" data-page="${nextPage}" ${nextPageDisabled}>
       <svg class="test-svg">
-        <use href="./img/sprite.svg#icon-one-arrow-right"></use>
+        <use href="${spriteUrl}#icon-one-arrow-right"></use>
       </svg>
     </button>
   `;
@@ -79,7 +81,7 @@ export function renderBtn(totalPages, currentPage) {
   markup += `
     <button class="exercise-button nav-button" data-page="${totalPages}" ${lastPageDisabled}>
       <svg class="test-svg">
-        <use href="./img/sprite.svg#icon-two-arrow-right"></use>
+        <use href="${spriteUrl}#icon-two-arrow-right"></use>
       </svg>
     </button>
   `;

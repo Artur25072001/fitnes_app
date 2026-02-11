@@ -1,5 +1,6 @@
 import { isFavorite } from '../service/storage.js';
 import { initFavoriteButton } from '../service/favorite-btn.js';
+import spriteUrl from '../img/sprite.svg';
 
 export function renderModal(modalData) {
   // Query DOM element each time to ensure we get the current element
@@ -21,19 +22,19 @@ export function renderModal(modalData) {
           <div class="modal-rating_container">
             <p class="modal-rating">${modalData.rating}</p>
             <svg class="modal-rating_svg">
-              <use href="../img/sprite.svg#icon-star"></use>
+              <use href="${spriteUrl}#icon-star"></use>
             </svg>
             <svg class="modal-rating_svg">
-              <use href="../img/sprite.svg#icon-star"></use>
+              <use href="${spriteUrl}#icon-star"></use>
             </svg>
             <svg class="modal-rating_svg">
-              <use href="../img/sprite.svg#icon-star"></use>
+              <use href="${spriteUrl}#icon-star"></use>
             </svg>
             <svg class="modal-rating_svg">
-              <use href="../img/sprite.svg#icon-star"></use>
+              <use href="${spriteUrl}#icon-star"></use>
             </svg>
             <svg class="modal-rating_svg">
-              <use href="../img/sprite.svg#icon-star"></use>
+              <use href="${spriteUrl}#icon-star"></use>
             </svg>
           </div>
         </div>
@@ -67,7 +68,7 @@ export function renderModal(modalData) {
             <button id="${modalData._id}" class="modal-favorites_btn ${isFavorite({ id: modalData._id }) ? 'favorited' : ''}">
               ${favorite ? 'Remove from favorites' : 'Add to favorites'}
               <svg class="modal-favorites_svg">
-                <use href="../img/sprite.svg#${favorite ? 'icon-trash' : 'icon-heart1'}"></use>
+                <use href="${spriteUrl}#${favorite ? 'icon-trash' : 'icon-heart1'}"></use>
               </svg></button
             ><button class="modal-rating_btn">Give a rating</button>
           </div>

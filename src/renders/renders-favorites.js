@@ -1,3 +1,5 @@
+import spriteUrl from '../img/sprite.svg';
+
 export function clearFavoritesContainer() {
   const favoritesContainer = document.querySelector('.favorites-wrapper');
   if (favoritesContainer) {
@@ -21,24 +23,24 @@ export function renderFavoritesPage(fav) {
             <div class="parts-rating_container">
               <p class="parts-type">WORKOUT</p>
               <svg class="parts-trash_svg" data-trash-id="${fav._id}">
-                <use href="../img/sprite.svg#icon-trash"></use>
+                <use href="${spriteUrl}#icon-trash"></use>
               </svg>
               <p class="parts-rating">${fav.rating}</p>
               <svg class="parts-star_svg">
-                <use href="../img/sprite.svg#icon-star"></use>
+                <use href="${spriteUrl}#icon-star"></use>
               </svg>
             </div>
             <div class="parts-start_container">
               <a href="#" id="${fav._id}" class="start-link">Start</a>
               <svg class="parts-arrow-svg">
-                <use href="./img/sprite.svg#icon-arrow-right"></use>
+                <use href="${spriteUrl}#icon-arrow-right"></use>
               </svg>
             </div>
           </div>
           <div class="parts-name_container">
             <div class="parts-run_container">
               <svg class="parts-svg_run">
-                <use href="../img/sprite.svg#icon-run"></use>
+                <use href="${spriteUrl}#icon-run"></use>
               </svg>
             </div>
             <h3 class="parts-name">${fav.name}</h3>
