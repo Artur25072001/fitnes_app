@@ -1,0 +1,2 @@
+let n=null;function l(){const o=document.querySelector("#headerNav"),e=document.querySelector(".nav-anchor_container");if(n&&(n.disconnect(),n=null),!o||!e){console.warn("Anchor elements not found");return}e.style.opacity="0",e.style.pointerEvents="none";const t={root:null,threshold:0,rootMargin:"-80px 0px 0px 0px"},r=s=>{s.forEach(c=>{c.isIntersecting?(e.style.opacity="0",e.style.pointerEvents="none"):(e.style.opacity="1",e.style.pointerEvents="auto")})};n=new IntersectionObserver(r,t),n.observe(o)}export{l as initAnchorHandler};
+//# sourceMappingURL=anchor-F9LsAN7P.js.map
