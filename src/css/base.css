@@ -18,17 +18,17 @@
 }
 @font-face {
   font-family: 'DM Regular';
-  src: url(/assets/DMSans-Regular.ttf) format('truetype');
+  src: url(/src/public/DMSans-Regular.ttf) format('truetype');
   font-weight: 400;
 }
 @font-face {
   font-family: 'DM Medium';
-  src: url(/assets/DMSans-Medium.ttf) format('truetype');
+  src: url(/src/public/DMSans-Medium.ttf) format('truetype');
   font-weight: 500;
 }
 @font-face {
   font-family: 'DM Italic';
-  src: url(/assets/DMSans-Italic.ttf) format('truetype');
+  src: url(/src/public/DMSans-Italic.ttf) format('truetype');
   font-weight: 400;
 }
 
