@@ -1,2 +1,2 @@
-import{i as o}from"./assets/modal-utils-BhCvlTdW.js";import"./assets/handler-main-CchtgW1E.js";import"./assets/handler-modal-C3tVQYEJ.js";import"./assets/handlers-BX98aRgA.js";document.addEventListener("DOMContentLoaded",()=>{o(window.location.href)});
+import{i as o}from"./assets/modal-utils-DXDv482n.js";import"./assets/handler-main-XxmYo78P.js";import"./assets/handler-modal-DPUfmqEh.js";import"./assets/handlers-DaQpbC5M.js";document.addEventListener("DOMContentLoaded",()=>{o(window.location.href)});
 //# sourceMappingURL=index.js.map
