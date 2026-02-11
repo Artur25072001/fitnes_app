@@ -54,7 +54,6 @@ export const pageInitializers = {
 export async function initPage(url) {
   const urlPath = new URL(url, window.location.origin).pathname;
   const pageName = urlPath.split('/').pop() || 'index.html';
-
   const initializer = pageInitializers[pageName];
 
   if (initializer) {

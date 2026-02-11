@@ -116,7 +116,7 @@
     border-radius: 20px;
   }
   .tags-list {
-    width: 197px;
+    width: 200px;
     flex-wrap: wrap;
     justify-content: space-between;
     grid-row: 1 / 2;
