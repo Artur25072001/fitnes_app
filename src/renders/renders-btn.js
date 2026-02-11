@@ -28,6 +28,29 @@ export function renderBtn(totalPages, currentPage) {
   }
 
   let markup = '';
+
+  // First page button (<<)
+  const firstPageDisabled = currentPage === 1 ? 'disabled' : '';
+  markup += `
+    <button class="exercise-button nav-button" data-page="1" ${firstPageDisabled}>
+      <svg class="test-svg">
+        <use href="./img/sprite.svg#icon-two-arrow-left"></use>
+      </svg>
+    </button>
+  `;
+
+  // Previous page button (<)
+  const prevPageDisabled = currentPage === 1 ? 'disabled' : '';
+  const prevPage = Math.max(1, currentPage - 1);
+  markup += `
+    <button class="exercise-button nav-button" data-page="${prevPage}" ${prevPageDisabled}>
+      <svg class="test-svg">
+        <use href="./img/sprite.svg#icon-one-arrow-left"></use>
+      </svg>
+    </button>
+  `;
+
+  // Page numbers
   if (startPage > 1) {
     markup += `<button class="exercise-button" data-page="1">1</button><span>...</span>`;
   }
@@ -39,6 +62,27 @@ export function renderBtn(totalPages, currentPage) {
   if (endPage < totalPages) {
     markup += `<span>...</span><button class="exercise-button" data-page="${totalPages}">${totalPages}</button>`;
   }
+
+  // Next page button (>)
+  const nextPageDisabled = currentPage === totalPages ? 'disabled' : '';
+  const nextPage = Math.min(totalPages, currentPage + 1);
+  markup += `
+    <button class="exercise-button nav-button" data-page="${nextPage}" ${nextPageDisabled}>
+      <svg class="test-svg">
+        <use href="./img/sprite.svg#icon-one-arrow-right"></use>
+      </svg>
+    </button>
+  `;
+
+  // Last page button (>>)
+  const lastPageDisabled = currentPage === totalPages ? 'disabled' : '';
+  markup += `
+    <button class="exercise-button nav-button" data-page="${totalPages}" ${lastPageDisabled}>
+      <svg class="test-svg">
+        <use href="./img/sprite.svg#icon-two-arrow-right"></use>
+      </svg>
+    </button>
+  `;
 
   btn_container.innerHTML = markup;
 }

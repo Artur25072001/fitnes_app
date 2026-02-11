@@ -19,6 +19,7 @@
   border-radius: 20px;
   position: relative;
   width: 80%;
+  max-height: 84vh;
   max-width: 450px;
   text-align: center;
   transform: scale(0.8) translateY(30px);
@@ -51,9 +52,15 @@
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 31vh;
+  height: 28vh;
   border-radius: 12px;
   margin-bottom: 1.2vh;
+}
+.modal-image_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
 .modal-rating_container {
   display: flex;
@@ -97,6 +104,7 @@
   background-color: #f4f4f4;
   border: none;
   width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 .modal-rating_btn {
@@ -106,6 +114,7 @@
   background-color: transparent;
   color: #f4f4f4;
   width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 .modal-rating_svg {
@@ -122,6 +131,29 @@
   height: 18px;
   fill: transparent;
   stroke: #242424;
+}
+.modal-favorites_btn:hover {
+  border: 1px solid #f4f4f4;
+  background-color: transparent;
+  color: #f4f4f4;
+}
+.modal-favorites_btn:hover .modal-favorites_svg {
+  stroke: #f4f4f4;
+}
+.modal-rating_btn:hover {
+  color: #242424;
+  background-color: #f4f4f4;
+  border: none;
+}
+
+.favorited:hover {
+  border: 1px solid #f4f4f4;
+  background-color: transparent;
+  color: #f4f4f4;
+}
+
+.favorited:hover .modal-favorites_svg {
+  stroke: #f4f4f4;
 }
 
 .modal-logo_header {
@@ -214,6 +246,9 @@
     height: 48px;
     font-size: 16px;
     gap: 8px;
+  }
+  .favorited {
+    width: 270px;
   }
   .modal-favorites_svg {
     width: 20px;
@@ -380,7 +415,6 @@
     font-size: 35px;
   }
   .form-rating_container {
-    align-items: center;
     gap: 6px;
     margin-bottom: 32px;
   }

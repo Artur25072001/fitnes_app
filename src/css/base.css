@@ -31,3 +31,7 @@
   src: url(/assets/DMSans-Italic.ttf) format('truetype');
   font-weight: 400;
 }
+
+html {
+  scroll-behavior: smooth;
+}

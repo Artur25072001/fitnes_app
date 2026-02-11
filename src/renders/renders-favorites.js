@@ -30,11 +30,9 @@ export function renderFavoritesPage(fav) {
             </div>
             <div class="parts-start_container">
               <a href="#" id="${fav._id}" class="start-link">Start</a>
-              <img
-                src="../img/arrow-right.png"
-                alt="arrow-right"
-                class="start-img"
-              />
+              <svg class="parts-arrow-svg">
+                <use href="./img/sprite.svg#icon-arrow-right"></use>
+              </svg>
             </div>
           </div>
           <div class="parts-name_container">

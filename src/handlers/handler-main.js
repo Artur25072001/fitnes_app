@@ -136,12 +136,13 @@ export function initMainHandler() {
   // Attach button container listener
   btnContainerListener = event => {
     const button = event.target.closest('.exercise-button');
-    if (button) {
+    if (button && !button.disabled) {
       btnContainer
         .querySelector('.exercise-button.active')
         ?.classList.remove('active');
       button.classList.add('active');
-      CURRENT_page = parseInt(button.textContent);
+      // Get page number from data-page attribute (for nav buttons) or textContent (for number buttons)
+      CURRENT_page = parseInt(button.dataset.page || button.textContent);
       switch (currentFilter) {
         case 'Muscles':
           fetchMuscles(CURRENT_page);

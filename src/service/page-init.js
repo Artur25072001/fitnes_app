@@ -18,6 +18,8 @@ export const pageInitializers = {
     initHandlers();
     const { initFooterHandler } = await import('../handlers/handler-footer.js');
     initFooterHandler();
+    const { initAnchorHandler } = await import('./anchor.js');
+    initAnchorHandler();
 
     updateActiveLink();
     fetchQuote();
@@ -37,6 +39,8 @@ export const pageInitializers = {
     initHandlers();
     const { initFooterHandler } = await import('../handlers/handler-footer.js');
     initFooterHandler();
+    const { initAnchorHandler } = await import('./anchor.js');
+    initAnchorHandler();
     updateActiveLink();
     fetchQuote();
     initFavoritesHandler();

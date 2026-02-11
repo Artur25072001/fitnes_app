@@ -61,7 +61,7 @@ export function renderParts(parts) {
             </div>
             <div class="parts-start_container">
               <a href="" id="${part._id}" class="start-link">Start</a>
-              <svg class="test-svg">
+              <svg class="parts-arrow-svg">
                 <use href="./img/sprite.svg#icon-arrow-right"></use>
               </svg>
             </div>

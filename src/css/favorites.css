@@ -8,9 +8,6 @@
   text-align: center;
 }
 
-.favorited {
-  border: 1px solid #5eff00;
-}
 .favorites .exercise-article {
   display: grid;
   grid-template-columns: 1fr;
@@ -46,6 +43,7 @@
   height: 16px;
   stroke: #242424;
   fill: transparent;
+  cursor: pointer;
 }
 .favorites .parts-rating {
   display: none;
