@@ -14,11 +14,11 @@
       referrerpolicy="no-referrer"
     />
     <script type="module" crossorigin src="/fitnes_app/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/modal-utils-CD8vXtPb.js">
-    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handler-main-CfQYHu6T.js">
-    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handler-modal-vuX0uedD.js">
-    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handlers-DzzjdVNe.js">
-    <link rel="stylesheet" crossorigin href="/fitnes_app/assets/modal-utils-D5jhCijf.css">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/modal-utils-Bx-Stgcn.js">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handler-main-BQlh4gs2.js">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handler-modal-CDhVDQgn.js">
+    <link rel="modulepreload" crossorigin href="/fitnes_app/assets/handlers-CszXgg65.js">
+    <link rel="stylesheet" crossorigin href="/fitnes_app/assets/modal-utils-CgcNwqIu.css">
   </head>
   <body>
     <header class="header">
@@ -146,6 +146,7 @@
       <section class="exercise container">
   <div class="exercise-header_container">
     <h2 class="exercise-header">Exercises</h2>
+    <p class="exercise-filter_text"></p>
   </div>
   <div class="exercise-wrapper">
     <div class="filter-container">
@@ -185,6 +186,9 @@
 
     <div class="exercise-muscles_box">
       <ul class="exercise-muscles_list"></ul>
+    </div>
+    <div class="exercise-bodyparts_box">
+      <ul class="exercise-bodyparts_list"></ul>
     </div>
     <div class="exercise-parts_container">
       <ul class="exercise-parts_list"></ul>
@@ -378,9 +382,10 @@
         <ul class="privacy-list">
           <li class="privacy-item">
             <a href="" class="privacy-link">Privacy Policy&nbsp;&nbsp;</a>
+          </li>
+          <li class="privacy-item">
             <span class="privacy-span"> / </span>
           </li>
-
           <li class="privacy-item">
             <a href="" class="privacy-link">&nbsp;&nbsp;Terms of Service</a>
           </li>
