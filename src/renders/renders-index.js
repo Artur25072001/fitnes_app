@@ -1,12 +1,14 @@
 import spriteUrl from '../img/sprite.svg';
+import { capitalizeFirstLetter } from '../service/capitalize.js';
 
 export function renderEquipment(equipment) {
   // Query DOM elements each time to ensure we get the current elements
   const muscles_list = document.querySelector('.exercise-muscles_list');
   const parts_list = document.querySelector('.exercise-parts_list');
   const equipment_list = document.querySelector('.exercise-equipment_list');
+  const bodyParts_list = document.querySelector('.exercise-bodyparts_list');
 
-  if (!muscles_list || !parts_list || !equipment_list) {
+  if (!muscles_list || !parts_list || !equipment_list || !bodyParts_list) {
     console.warn(
       '[renders-index.js] Equipment render elements not found in DOM'
     );
@@ -16,6 +18,7 @@ export function renderEquipment(equipment) {
   muscles_list.innerHTML = '';
   equipment_list.innerHTML = '';
   parts_list.innerHTML = '';
+  bodyParts_list.innerHTML = '';
   const markup = equipment
     .map(equipment => {
       return `
@@ -37,8 +40,9 @@ export function renderParts(parts) {
   const muscles_list = document.querySelector('.exercise-muscles_list');
   const parts_list = document.querySelector('.exercise-parts_list');
   const equipment_list = document.querySelector('.exercise-equipment_list');
+  const bodyParts_list = document.querySelector('.exercise-bodyparts_list');
 
-  if (!muscles_list || !parts_list || !equipment_list) {
+  if (!muscles_list || !parts_list || !equipment_list || !bodyParts_list) {
     console.warn('[renders-index.js] Parts render elements not found in DOM');
     return;
   }
@@ -46,6 +50,7 @@ export function renderParts(parts) {
   muscles_list.innerHTML = '';
   equipment_list.innerHTML = '';
   parts_list.innerHTML = '';
+  bodyParts_list.innerHTML = '';
   const markup = parts
     .map(part => {
       return `
@@ -74,7 +79,7 @@ export function renderParts(parts) {
                 <use href="${spriteUrl}#icon-run"></use>
               </svg>
             </div>
-            <h3 class="parts-name">${part.name}</h3>
+            <h3 class="parts-name">${capitalizeFirstLetter(part.name)}</h3>
           </div>
           <ul class="parts-information-list">
             <li class="parts-information_item">
@@ -102,8 +107,9 @@ export function renderMuscles(muscles) {
   const muscles_list = document.querySelector('.exercise-muscles_list');
   const parts_list = document.querySelector('.exercise-parts_list');
   const equipment_list = document.querySelector('.exercise-equipment_list');
+  const bodyParts_list = document.querySelector('.exercise-bodyparts_list');
 
-  if (!muscles_list || !parts_list || !equipment_list) {
+  if (!muscles_list || !parts_list || !equipment_list || !bodyParts_list) {
     console.warn('[renders-index.js] Muscles render elements not found in DOM');
     return;
   }
@@ -111,6 +117,7 @@ export function renderMuscles(muscles) {
   muscles_list.innerHTML = '';
   equipment_list.innerHTML = '';
   parts_list.innerHTML = '';
+  bodyParts_list.innerHTML = '';
   const markup = muscles
     .map(muscle => {
       return `
@@ -125,4 +132,36 @@ export function renderMuscles(muscles) {
     })
     .join('');
   muscles_list.innerHTML = markup;
+}
+
+export function renderBodyParts(bodyParts) {
+  // Query DOM elements each time to ensure we get the current elements
+  const muscles_list = document.querySelector('.exercise-muscles_list');
+  const parts_list = document.querySelector('.exercise-parts_list');
+  const equipment_list = document.querySelector('.exercise-equipment_list');
+  const bodyParts_list = document.querySelector('.exercise-bodyparts_list');
+
+  if (!muscles_list || !parts_list || !equipment_list || !bodyParts_list) {
+    console.warn('[renders-index.js] Muscles render elements not found in DOM');
+    return;
+  }
+
+  muscles_list.innerHTML = '';
+  equipment_list.innerHTML = '';
+  parts_list.innerHTML = '';
+  bodyParts_list.innerHTML = '';
+  const markup = bodyParts
+    .map(bodyPart => {
+      return `
+        <li class="exercise-bodyparts_item">
+            <img src="${bodyPart.imgURL}" alt="${bodyPart.name}" class="exercise-bodyparts_img" />
+            <div class="exercise-bodyparts_overlay">
+            <h3 class="exercise-bodyparts_header">${bodyPart.name}</h3>
+            <p class="exercise-bodyparts_text">${bodyPart.filter}</p></div>
+
+        </li>
+      `;
+    })
+    .join('');
+  bodyParts_list.innerHTML = markup;
 }

@@ -9,6 +9,12 @@
 .exercise-wrapper {
   margin-bottom: 10%;
 }
+.exericise-muscles_header,
+.exercise-bodyparts_header,
+.exercise-equipment_header,
+.exercise-filter_text {
+  text-transform: capitalize;
+}
 
 /* FILTER */
 .filter-search_wrapper {
@@ -16,6 +22,10 @@
   position: relative;
   width: 100%;
   margin-bottom: 20px;
+}
+.exercise-filter_text {
+  color: rgba(36, 36, 36, 0.5);
+  font-size: 20px;
 }
 .filter-search_input {
   display: block;
@@ -27,6 +37,11 @@
   background-color: transparent;
   outline: none;
   box-sizing: border-box;
+}
+.exercise-header_container {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
 }
 
 .exercise-search_svg {
@@ -210,14 +225,16 @@
 
 /* MUSCLES */
 .exercise-muscles_list,
-.exercise-equipment_list {
+.exercise-equipment_list,
+.exercise-bodyparts_list {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   gap: 1em;
 }
 .exercise-muscles_overlay,
-.exercise-equipment_overlay {
+.exercise-equipment_overlay,
+.exercise-bodyparts_overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -231,7 +248,8 @@
   text-align: center;
 }
 .exercise-muscles_item,
-.exercise-equipment_item {
+.exercise-equipment_item,
+.exercise-bodyparts_item {
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -246,7 +264,8 @@
   justify-content: center;
 }
 .exercise-muscles_item:last-child,
-.exercise-equipment_item:last-child {
+.exercise-equipment_item:last-child,
+.exercise-bodyparts_item:last-child {
   margin-bottom: 2em;
 }
 
@@ -255,12 +274,14 @@
   height: 100%;
 }
 .exericise-muscles_header,
-.exercise-equipment_header {
+.exercise-equipment_header,
+.exercise-bodyparts_header {
   font-size: 20px;
   color: #f4f4f4;
 }
 .exercise-muscles_text,
-.exercise-equipment_text {
+.exercise-equipment_text,
+.exercise-bodyparts_text {
   font-size: 14px;
   color: rgba(244, 244, 244, 0.4);
 }
@@ -319,6 +340,9 @@
   .filter-search_input {
     width: 273px;
   }
+  .exercise-filter_text {
+    font-size: 24px;
+  }
 
   .exercise-link {
     font-size: 16px;
@@ -329,14 +353,16 @@
     margin-bottom: 40px;
   }
   .exercise-muscles_list,
-  .exercise-equipment_list {
+  .exercise-equipment_list,
+  .exercise-bodyparts_list {
     display: flex;
     flex-direction: row;
     gap: 15px;
     justify-content: space-between;
   }
   .exercise-muscles_item,
-  .exercise-equipment_item {
+  .exercise-equipment_item,
+  .exercise-bodyparts_item {
     width: 31%;
     height: 225px;
     margin-bottom: 17px;
@@ -426,13 +452,15 @@
     margin-bottom: 32px;
   }
   .exercise-muscles_item,
-  .exercise-equipment_item {
+  .exercise-equipment_item,
+  .exercise-bodyparts_item {
     width: 32%;
     margin-bottom: 16px;
     height: 21vh;
   }
   .exercise-muscles_item:last-child,
-  .exercise-equipment_item:last-child {
+  .exercise-equipment_item:last-child,
+  .exercise-bodyparts_item:last-child {
     margin-bottom: 32px;
   }
   .exercise-parts_item {

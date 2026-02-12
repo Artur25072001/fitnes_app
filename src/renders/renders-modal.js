@@ -1,6 +1,7 @@
 import { isFavorite } from '../service/storage.js';
 import { initFavoriteButton } from '../service/favorite-btn.js';
 import spriteUrl from '../img/sprite.svg';
+import { capitalizeFirstLetter } from '../service/capitalize.js';
 
 export function renderModal(modalData) {
   // Query DOM element each time to ensure we get the current element
@@ -18,7 +19,7 @@ export function renderModal(modalData) {
         <div class="modal-image_container">
           <img src="${modalData.gifUrl}" alt="${modalData.name}" /></div>
         <div class="modal-logo_container">
-          <h2 class="modal-logo_header">${modalData.name}</h2>
+          <h2 class="modal-logo_header">${capitalizeFirstLetter(modalData.name)}</h2>
           <div class="modal-rating_container">
             <p class="modal-rating">${modalData.rating}</p>
             <svg class="modal-rating_svg">

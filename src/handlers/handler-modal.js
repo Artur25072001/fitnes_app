@@ -51,7 +51,6 @@ export function initModalHandler() {
     const review = commentInput.value.trim();
     const rating = ratingInput ? ratingInput.value : null;
     const rate = Number(rating);
-    console.log(typeof rate);
 
     // Validate rating is selected
     if (!rating) {
@@ -81,10 +80,20 @@ export function initModalHandler() {
         }
         ratingModal.classList.remove('is-active');
       } else {
+        if (response.status === 409) {
+          emailInput.value = '';
+          alert('Such email already exists');
+          return;
+        }
         console.error('Failed to submit rating:', response.status);
         alert('Failed to submit rating. Please try again.');
       }
     } catch (error) {
+      // Handle error
+      if (error.message === 'Such email already exists') {
+        emailInput.value = '';
+        alert('Such email already exists');
+      }
       console.error('Error submitting rating:', error);
       alert('An error occurred. Please try again.');
     }

@@ -1,4 +1,9 @@
-import { fetchMuscles, fetchParts, fetchEquipment } from '../service/fetch.js';
+import {
+  fetchMuscles,
+  fetchParts,
+  fetchEquipment,
+  fetchBodyParts,
+} from '../service/fetch.js';
 import { handleStartLinkClick } from '../service/modal-utils.js';
 
 let currentFilter = 'Muscles';
@@ -8,6 +13,7 @@ let filter_parts = 'bodypart';
 let CURRENT_page = 1;
 
 let musclesListListener = null;
+let bodyPartsListListener = null;
 let equipmentListListener = null;
 let searchFormListener = null;
 let btnContainerListener = null;
@@ -23,13 +29,18 @@ export function initMainHandler() {
   const btnContainer = document.querySelector('.exercise-btn-container');
   const search_form = document.querySelector('.filter-search_wrapper');
   const muscles_list = document.querySelector('.exercise-muscles_list');
+  const bodyParts_list = document.querySelector('.exercise-bodyparts_list');
   const equipment_list = document.querySelector('.exercise-equipment_list');
   const listContainer = document.querySelector('.exercise-parts_list');
-  const exerciseModal = document.querySelector('.exercise-modal');
+  const exercise_header = document.querySelector('.exercise-header');
+  const filter_text = document.querySelector('.exercise-filter_text');
 
   // Remove old event listeners if they exist
   if (musclesListListener && muscles_list) {
     muscles_list.removeEventListener('click', musclesListListener);
+  }
+  if (bodyPartsListListener && bodyParts_list) {
+    bodyParts_list.removeEventListener('click', bodyPartsListListener);
   }
   if (equipmentListListener && equipment_list) {
     equipment_list.removeEventListener('click', equipmentListListener);
@@ -55,6 +66,8 @@ export function initMainHandler() {
         .querySelector('.exericise-muscles_header')
         .textContent.trim()
         .toLowerCase();
+      filter_text.textContent = muscle_name;
+      exercise_header.textContent = 'Exercise /';
       search_form.style.display = 'block';
       CURRENT_page = 1;
       currentFilter = 'Body Parts';
@@ -62,13 +75,38 @@ export function initMainHandler() {
       filter_parts = `muscles=${muscle_name}`;
       fetchParts(CURRENT_page, filter_parts);
       exercise_filter.forEach(link => link.classList.remove('active'));
+      document.querySelector('.exercise-link.muscles').classList.add('active');
+    }
+  };
+  if (muscles_list) {
+    muscles_list.addEventListener('click', musclesListListener);
+  }
+
+  // Attach body parts list listener
+  bodyPartsListListener = event => {
+    const bodyPartItem = event.target.closest('.exercise-bodyparts_item');
+    if (bodyPartItem) {
+      console.log(bodyPartItem);
+      let bodyPart_name = bodyPartItem
+        .querySelector('.exercise-bodyparts_header')
+        .textContent.trim()
+        .toLowerCase();
+      filter_text.textContent = bodyPart_name;
+      exercise_header.textContent = 'Exercise /';
+      search_form.style.display = 'block';
+      CURRENT_page = 1;
+      currentFilter = 'Body Parts';
+      base_category = bodyPart_name;
+      filter_parts = `bodypart=${bodyPart_name}`;
+      fetchParts(CURRENT_page, filter_parts);
+      exercise_filter.forEach(link => link.classList.remove('active'));
       document
         .querySelector('.exercise-link.body_parts')
         .classList.add('active');
     }
   };
-  if (muscles_list) {
-    muscles_list.addEventListener('click', musclesListListener);
+  if (bodyParts_list) {
+    bodyParts_list.addEventListener('click', bodyPartsListListener);
   }
 
   // Attach equipment list listener
@@ -79,6 +117,8 @@ export function initMainHandler() {
         .querySelector('.exercise-equipment_header')
         .textContent.trim()
         .toLowerCase();
+      filter_text.textContent = equipment_name;
+      exercise_header.textContent = 'Exercise /';
       search_form.style.display = 'block';
       CURRENT_page = 1;
       currentFilter = 'Body Parts';
@@ -87,7 +127,7 @@ export function initMainHandler() {
       fetchParts(CURRENT_page, filter_parts);
       exercise_filter.forEach(link => link.classList.remove('active'));
       document
-        .querySelector('.exercise-link.body_parts')
+        .querySelector('.exercise-link.equipment')
         .classList.add('active');
     }
   };
@@ -101,17 +141,23 @@ export function initMainHandler() {
       e.preventDefault();
       if (e.target.classList.contains('muscles')) {
         search_form.style.display = 'none';
+        filter_text.textContent = '';
+        exercise_header.textContent = 'Exercise';
         CURRENT_page = 1;
         currentFilter = 'Muscles';
         fetchMuscles();
       } else if (e.target.classList.contains('body_parts')) {
-        search_form.style.display = 'block';
+        search_form.style.display = 'none';
+        filter_text.textContent = '';
+        exercise_header.textContent = 'Exercise';
         CURRENT_page = 1;
         currentFilter = 'Body Parts';
         filter_parts = 'bodypart';
-        fetchParts(CURRENT_page, filter_parts);
+        fetchBodyParts();
       } else if (e.target.classList.contains('equipment')) {
         search_form.style.display = 'none';
+        filter_text.textContent = '';
+        exercise_header.textContent = 'Exercise';
         CURRENT_page = 1;
         currentFilter = 'Equipment';
         fetchEquipment();

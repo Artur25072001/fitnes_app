@@ -2,6 +2,7 @@ import {
   renderMuscles,
   renderParts,
   renderEquipment,
+  renderBodyParts,
 } from '../renders/renders-index.js';
 import { renderFavoritesPage } from '../renders/renders-favorites.js';
 import { renderModal } from '../renders/renders-modal.js';
@@ -56,6 +57,20 @@ export async function fetchMuscles(page = CURRENT_page) {
     totalPages = data.totalPages;
     renderBtn(totalPages, page);
     renderMuscles(data.results);
+    scrollToExercisesOnMobile();
+  } catch (error) {
+    console.error('Error fetching muscles:', error);
+  }
+}
+export async function fetchBodyParts(page = CURRENT_page) {
+  try {
+    const response = await fetch(
+      `${apiLink}/filters?filter=Body%20parts&page=${page}&limit=12`
+    );
+    const data = await response.json();
+    totalPages = data.totalPages;
+    renderBtn(totalPages, page);
+    renderBodyParts(data.results);
     scrollToExercisesOnMobile();
   } catch (error) {
     console.error('Error fetching muscles:', error);
